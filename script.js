@@ -1,15 +1,24 @@
-function encodeBase64() {
-  const input = document.getElementById("input").value;
-  const encoded = btoa(unescape(encodeURIComponent(input)));
-  document.getElementById("output").value = encoded;
-}
+function convert() {
+  const value = parseFloat(document.getElementById("valueInput").value);
+  const fromUnit = document.getElementById("fromUnit").value;
+  const toUnit = document.getElementById("toUnit").value;
+  const result = document.getElementById("result");
 
-function decodeBase64() {
-  const input = document.getElementById("input").value;
-  try {
-    const decoded = decodeURIComponent(escape(atob(input)));
-    document.getElementById("output").value = decoded;
-  } catch (e) {
-    document.getElementById("output").value = "❌ Invalid Base64 input";
+  if (isNaN(value)) {
+    result.innerText = "❌ Please enter a valid number.";
+    return;
   }
+
+  const units = {
+    B: 1,
+    KB: 1024,
+    MB: 1024 ** 2,
+    GB: 1024 ** 3,
+    TB: 1024 ** 4,
+  };
+
+  const bytes = value * units[fromUnit];
+  const converted = bytes / units[toUnit];
+
+  result.innerText = `Result: ${converted} ${toUnit}`;
 }

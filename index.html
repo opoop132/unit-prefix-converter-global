@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Base64 Encoder / Decoder</title>
-  <meta name="description" content="Encode or decode Base64 strings online. Fast and simple Base64 encoder and decoder tool.">
+  <title>Unit Prefix Converter</title>
+  <meta name="description" content="Convert between KB, MB, GB, and TB. Fast and free unit prefix converter for data sizes.">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6443541493309841"
           crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Base64 Encoder / Decoder</h1>
+    <h1>Unit Prefix Converter</h1>
+    <p>Convert data units like KB, MB, GB, and TB.</p>
 
-    <textarea id="input" placeholder="Enter your text here..."></textarea>
+    <input type="number" id="valueInput" placeholder="Enter value" />
+    <select id="fromUnit">
+      <option value="B">Bytes</option>
+      <option value="KB">KB</option>
+      <option value="MB">MB</option>
+      <option value="GB">GB</option>
+      <option value="TB">TB</option>
+    </select>
 
-    <div class="buttons">
-      <button onclick="encodeBase64()">Encode</button>
-      <button onclick="decodeBase64()">Decode</button>
-    </div>
+    <select id="toUnit">
+      <option value="B">Bytes</option>
+      <option value="KB">KB</option>
+      <option value="MB">MB</option>
+      <option value="GB">GB</option>
+      <option value="TB">TB</option>
+    </select>
 
-    <textarea id="output" placeholder="Result..." readonly></textarea>
+    <button onclick="convert()">Convert</button>
+
+    <div class="result" id="result">Result: –</div>
   </div>
 
   <script src="script.js"></script>

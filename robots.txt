@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://base64-encoder-decoder-global.netlify.app/sitemap.xml
+Sitemap: https://unit-prefix-converter-global.netlify.app/sitemap.xml
